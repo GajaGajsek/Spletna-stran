@@ -1,0 +1,459 @@
+/* vključitev spletne pisava */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-size: 16px;
+    
+}
+
+:root {
+
+    --svetlo-roza: #ffe5ec;
+    --temno-roza: #fb6f92;
+    --svetlo-modra: #b8b8ff;
+    --temno-modra: #005EC9;
+    --svetlo-zelena: #c1fba4;
+    --prosojnost: 0.78;
+}
+
+body.omejeno {
+    background-color: var(--svetlo-roza);
+}
+
+.zozan-ovijalni {
+    max-width: 1440px;
+    min-width: 100vh;
+    margin: 0 auto; /* sredinsko horizontalna porovnava s pomočjo obrobja */
+    background-color: white;
+    box-shadow: 0 1.5rem #fb6f9220; /* senca škatle */
+}
+
+header {
+    position: sticky;
+    padding: 1.5rem 0; /* obroba gor in dol enaka ter levo in desno enaka */
+    /*oblikovanje za navigacijo in logo oboje v eni vrstici */
+    display: flex;
+    /* poravnava glede na glavno x od */
+    justify-content: space-between;
+    /*poravnava glede na pomožno y os */
+    align-items: center;
+    z-index: 100;
+    top: 0;
+    background-color: var(--svetlo-roza);
+
+}
+
+nav ul {
+    list-style-type: none;
+    /* vsi v eni vrstici */
+    display: flex;
+    height: 50px;
+    /* poravnava glede na y os */
+    align-items: center;
+    /*poravnava glede na x od */
+    justify-content: space-between;
+}
+/* da se besedilo ne pojavi za glavo */
+#glavna {
+    scroll-margin-top: 150px;
+}
+
+#predstavitev {
+    scroll-margin-top: 150px;
+}
+
+#pricevanja {
+    scroll-margin-top: 150px;
+}
+
+nav > ul > li {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+/*oblikovanje navigacije v normalnem stanju */
+nav > ul > li > a {
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+}
+
+/*oblikovanje navigacije ko grem z misko preko */
+nav > ul > li > a:hover {
+    background-color: var(--svetlo-roza);
+}
+
+/* oblikovanje glede na stanje ko je povezava obiskovana */
+nav > ul > li > a:visited {
+    color: var(--temno-roza);
+}
+
+#glavna {
+    text-align: left;
+    padding-top: 100px;
+}
+
+.ovijalni {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.ovijalni-mali {
+    max-width: 840px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* dva stolpca v enem besedilo v drugem slika */
+#glavna {
+    margin-bottom: 50px;
+}
+ #glavna > .ovijalni {
+    display: flex;
+ }
+
+ .opis-prvi {
+    min-width: 600px;
+    max-width: 650px;
+    padding-right: 20px;
+    text-align: justify;
+ }
+.grafika-prvi {
+    flex-grow: 1;
+    background-image: url(../images/dejavnosti.png);
+    background-size: cover;
+    background-position: center;
+
+
+}
+
+/* iblikovanje dejavnosti kartice */
+.predstavitev-vsebina {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.predstavitev {
+    min-height: 400px;
+    width: 380px;
+    box-shadow: 0px 10px 40px 10px var(--temno-roza);
+    padding-top: 50px;
+    padding-left: 40px;
+    padding-right: 40px;
+    position: relative;
+}
+.predstavitev:nth-child(even) {
+    margin-top: 75px;
+    margin-left: 100px;
+}
+.predstavitev:nth-child(odd) {
+    margin-right: 100px;
+}
+.naslov-predstavitve {
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 50px;
+}
+
+.predstavitev .odstavek-mali {
+    text-align: justify;
+}
+.ikona {
+    position: absolute;
+    left: 170px;
+}
+.ikona > img {
+    width: 25px;
+    height: 25px;
+}
+
+*/* pričevanja oblikovanje liki */
+
+#pricevanja > img {
+    position: absolute;
+    z-index: 2;
+}
+
+
+#pricevanja > img:first-child {
+    top: 480px;
+    left: calc(50% - 200px);
+
+}
+
+#pricevanja > img:nth-child(2) {
+    top: 300px;
+    left: calc(50% + 7rem);
+}
+
+#pricevanja > img:nth-child(3) {
+    top: 1100px;
+    left: calc(70% - 20pc);
+}
+
+
+/* prepričevanje oblikovanje */
+
+.pricevanja-ovijalni {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.izjava {
+    /* ozadje in zaobila robove */
+    background-color: var(--svetlo-roza);
+    border-radius: 8px;
+    /* obloga  nastavitev */
+    padding: 50px 10px 20px 10px;
+    /* minimalna in maksimalni širina */
+    min-width: 350px;
+    max-width: 400px;
+    margin-bottom: 150px ;
+    /* nastavitve za pisavo in višina vrstice */
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-style: italic;
+    text-align: justify;
+    line-height: 1.6em;
+    position: relative;
+    z-index: 2;
+}
+
+
+
+/* pred in za besedilom se naj nahajajo narekovaji */
+.izjava-opis::before, .izjava-opis::after {
+    font-size: 50px;
+    font-style: normal;
+    /* pozicija */
+    position: absolute;
+    /* koda za začetni narekovaj */
+    content: "\201C";
+    /* prosojnost */
+    opacity: 0.3;
+}
+
+.izjava-opis::before {
+    /* določanje pozicije */
+    top: 25px;
+     left: 20px;
+}
+
+.izjava-opis::after {
+    /* koda za končni narekovaj */
+    content: "\201D";
+    /* določanje pozicije */
+    right: 20px;
+    bottom: 0;
+}
+.izjava-glava {
+    position: absolute;
+    left: 121px;
+    top: 20px;
+    color: var(--temno-roza);
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    z-index: 9999;
+}
+.izjava-noga {
+    /* pozicija */
+    position: relative;
+    top: -10px;
+    left: 120px;
+    padding: 0 10px 0 120px;
+    color: var(--temno-roza);
+}
+.izjava > img {
+    max-width: 100%;
+    vertical-align: middle;
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    margin: 40px 0 0 10px;
+    position: absolute;
+    top: 400px;
+}
+
+#pricevanja {
+    margin-bottom: 100px;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* oblikovanje obrazec za prijavo */
+
+.novice-obrazec {
+    max-width: 450px;
+    margin: 0 auto; /* Horizontalno poravnanje na sredino */
+}
+.novice-vnos , .novice-gumb {
+    padding: 0.75rem;
+    font-size: 1rem;
+    margin: 0;
+    height: 3rem;
+
+}
+
+.novice-gumb {
+    display: inline-block;
+    background-color: var(--svetlo-modra);
+    text-transform: uppercase;
+
+}
+
+/* noga oblikovanje */
+.noga-znotraj {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    justify-content: space-between;
+
+}
+
+.noga-logo {
+    order: 1;
+    display: flex;
+    align-items: center;
+    
+}
+.noga-povezave {
+    order: 4;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center; 
+    padding-bottom: 20px;
+}
+
+.noga-povezave > li > a {
+    text-decoration: none;
+    color: var(--svetlo-roza);
+}
+
+.noga-povezave > li > a:link {
+    text-decoration: none;
+    color: var(--svetlo-roza);
+}
+
+.noga-povezave > li > a:visited {
+    text-decoration: none;
+    color: var(--svetlo-roza);
+}
+
+
+.noga-povezave > li {
+    padding-right: 20px;
+}
+
+.noga-povezave > li:last-child {
+    padding-right: 0;
+}
+
+.noga-druzabna {
+    order: 2;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+}
+
+.noga-druzabna > li > svg {
+    width: 30px;
+    height: 30px;
+}
+
+.noga-copyright {
+    order: 3;
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+
+.novice-vnos {
+    display: inline-block;
+}
+
+
+#pricevanja .naslov-razdelka { /* vsem elementom z razredom naslov-razdelka, ki so potomci elemetnov z id pricevanja spremeni slog */
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+#obvestila, footer {
+    background-color: var(--temno-roza);
+}
+
+h1,h2 {
+    margin: 0;
+    padding-bottom: 1rem;
+
+}
+
+h1.naslov-prvi { /* naslov h1, ki ima razred naslov-prvi*/
+    font-size: 2.5rem;
+    color: var(--temno-roza);
+}
+
+p.besedilo-prvi {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    letter-spacing: -0.1px; /*razmik med črkami */
+}
+
+h2.naslov-razdelka {
+    font-size: 2rem;
+    line-height: 2;
+}
+
+p.odstavek-razdelka{
+    font-size: 1.1rem;
+    padding: 0 4.5rem;
+    margin: 0px;
+}
+
+.svetla-pisava {
+    color: var(--svetlo-roza);
+    opacity: 0.78;
+}
+
+/* To kar mora biti skrito  */
+.skrito {
+    display: none;
+    margin: 0;
+    border: 2px double var(--svetlo-roza);
+}
+
+.skrito > h2 {
+    font-size: 26px;
+    padding-top: 10px;
+}
+
+.skrito >  p{
+    margin: 0;
+    padding-bottom: 7px;
+    padding-top: 25px;
+}
+
+#naslov_eposta {
+    font-size: 26px;
+}
+
+.novice-vnos:valid {
+    background-color: green;
+}
+
+.novice-vnos:invalid {
+    background-color: red;
+}
